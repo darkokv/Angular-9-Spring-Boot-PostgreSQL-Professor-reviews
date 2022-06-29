@@ -1,0 +1,33 @@
+<div *ngIf="topInstitutes" class="row">
+
+  <div *ngFor="let institute of sortBy('averageRate').slice(0,10); let i = index" class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+    
+    <!--Institute card-->
+    
+        <div class="card" >
+            <div class="img1"><img src="{{institute.img_cover_src}}" alt=""></div>
+            <!--div class="img2"><img src="{{profilePicture}}" alt=""></div-->
+            <div class="main-text">
+                <h2>{{institute.name}}</h2>
+                <p class="text-left">
+                    <strong>Adresa:</strong> {{institute.adress}} <br>
+                    <strong>Grad:</strong> {{institute.city}} <br>
+                </p>
+                
+                <div class="rate">
+                    <span [style.color]="i == 0 ? '#e6c200' : (i == 1 ? '#8a8a8a' : (i == 2 ? '#cd7f32' : 'black'))">#{{i+1}}</span>
+                    <i class="fa fa-star-o"></i>{{ institute.averageRate }}<br>
+                    <!--<ng-animated-counter *ngIf="averageRate" [params]="params"></ng-animated-counter>-->
+        
+                </div>
+                <div class="ratesCount">{{ rateCountPrint(institute.ratesCount) ? institute.ratesCount + ' recenzija' : institute.ratesCount + ' recenzije' }}</div>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+</div>
+  
+
+

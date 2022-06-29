@@ -1,0 +1,55 @@
+<div class="body d-flex justify-content-center align-items-center">
+
+    <div class="register row">
+
+        <div class="col-xl-6 col-lg-6 col-md-6 img">
+            <img src="../../../assets/img/logo_transparent.png" alt="">
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 form d-flex justify-content-center align-self-center">
+            
+            <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+                <h3>Registruj se</h3>
+                <div class="form-group pt-1">
+                  <input type="text" id="fullname" formControlName="fullname" placeholder="&#xf2be; Ime i prezime" style="font-family:Poppins, sans-serif, FontAwesome"> <br>
+                  <label class="text-danger message" *ngIf="service.formModel.get('fullname').touched && service.formModel.get('fullname').errors?.required">Ovo polje je obavezno</label>
+                </div>
+                
+
+                <div class="form-group pt-1">
+                  <input type="email" id="email" formControlName="email" placeholder="&#xf0e0; E-mail" style="font-family:Poppins, sans-serif, FontAwesome"> <br>
+                  <label class="text-danger message" *ngIf="service.formModel.get('email').touched && service.formModel.get('email').errors?.required">Ovo polje je obavezno</label>
+                  <label class="text-danger message" *ngIf="service.formModel.get('email').touched && service.formModel.get('email').errors?.email">E-mail mora biti validan</label>
+                </div>
+
+                <div class="form-group pt-1">
+                    <input type="text" id="username" formControlName="username" placeholder="&#xf007; Korisničko ime" style="font-family:Poppins, sans-serif, FontAwesome"> <br>
+                    <label class="text-danger message" *ngIf="service.formModel.get('username').touched && service.formModel.get('username').errors?.required">Ovo polje je obavezno</label>
+                </div>
+
+                <div formGroupName="passwords">
+
+                  <div class="form-group pt-1">
+                    <input type="password" id="password" formControlName="password" placeholder="&#xf023; Lozinka" style="font-family:Poppins, sans-serif, FontAwesome"> <br>
+                    <label class="text-danger message" *ngIf="service.formModel.get('passwords.password').touched && service.formModel.get('passwords.password').errors?.required">Ovo polje je obavezno</label>
+                    <label class="text-danger message" *ngIf="service.formModel.get('passwords.password').touched && service.formModel.get('passwords.password').errors?.minlength">Sifra mora sadržati najmanje 8 karaktera</label>
+                  </div>
+
+                  <div class="form-group pt-1">
+                    <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="&#xf023; Ponovi lozinku" style="font-family:Poppins, sans-serif, FontAwesome"> <br>
+                    <label class="text-danger message" *ngIf="service.formModel.get('passwords.confirmPassword').touched && service.formModel.get('passwords.confirmPassword').errors?.required">Ovo polje je obavezno</label>
+                    <label class="text-danger message" *ngIf="service.formModel.get('passwords.confirmPassword').errors?.passwordMismatch">Potvrda lozinke se ne poklapa</label>
+                  </div>
+
+                </div>  
+                <div class="form-group pt-1">
+                  <button type="submit" class="btn" [disabled]="!service.formModel.valid">Registruj se</button>
+                </div>
+                <p><a routerLink="/prijava">Već imaš nalog? Prijavi se</a></p>
+              </form>
+
+        </div>
+
+    </div>
+
+</div>

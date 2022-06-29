@@ -1,0 +1,15 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+#list-tab a {
+    width: 100%;
+}
+#list-tab span {
+    position: absolute;
+    right: 10px;
+    color: white;
+    background-color: $mainColor;
+}
+.active {
+    background-color: $secondaryColor;
+}

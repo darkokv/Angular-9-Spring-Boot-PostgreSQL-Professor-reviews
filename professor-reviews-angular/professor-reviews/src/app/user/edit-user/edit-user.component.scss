@@ -1,0 +1,12 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+#form {
+    width: 50%;
+}
+#form button {
+    border: none;
+    outline: none;
+    color: $mainColor;
+    background-color: $secondaryColor;
+}

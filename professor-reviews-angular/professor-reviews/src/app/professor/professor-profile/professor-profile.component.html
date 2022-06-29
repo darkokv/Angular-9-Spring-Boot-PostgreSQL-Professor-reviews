@@ -1,0 +1,309 @@
+<!--<circle-progress
+[percent]="averageRate * 10"
+[radius]="50"
+[maxPercent]="100"
+[outerStrokeWidth]="5"
+[space]="-4"
+[innerStrokeWidth]="3"
+[outerStrokeColor]="'#eb9627'"
+[innerStrokeColor]="'#C7E596'"
+[animation]="true"
+[animationDuration]="500"
+[title]="averageRate"
+[showUnits]="false"
+></circle-progress>-->
+
+<div *ngIf="lecturer && averageRates" class="profile">
+
+    <div class="top row">
+
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="row">
+                <div class="profilePhoto col-xl-3 col-lg-3 col-md-3">
+                    <img src="{{lecturer.img_src}}" width="100px" height="120px">
+                </div>
+
+                <div class="col-xl-9 col-lg-9 col-md-9 data">
+                    <h4>{{lecturer.fullname}}</h4>
+                    <strong>Institut: </strong> <span>{{lecturer.institute.name}}</span> <br>
+                    <strong>Grad: </strong> <span>{{lecturer.institute.city}}</span> <br>
+                    <strong>Email: </strong> <a href="mailto:{{lecturer.email}}">{{lecturer.email}}</a> <br>
+                </div>
+            </div>
+            <div class="chart text-center">
+                
+                <div class="ngxx d-flex justify-content-center" (resized)="onResize($event)">
+                    <ngx-charts-polar-chart 
+                    [view]="view"
+                    [scheme]="colorScheme"
+                    [legend]="legend"
+                    [xAxis]="xAxis"
+                    [yAxis]="yAxis"
+                    [results]="averageRateChart"
+                    [curve]="linearCurve"
+                    [autoScale]="false"
+                    [yAxisMinScale]="yAxisMinScale"
+                    >
+                  </ngx-charts-polar-chart>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-12 text-center row m-0 circles">
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRate * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="8"
+                    [space]="-7"
+                    [innerStrokeWidth]="5"
+                    [outerStrokeColor]="'#00ffd5'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRate"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="34"
+                    [titleFontWeight]="800"
+                >
+                </circle-progress>
+    
+                <p><strong>Ukupna ocena</strong></p>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRates.useful_l * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="5"
+                    [space]="-4"
+                    [innerStrokeWidth]="3"
+                    [outerStrokeColor]="'#AC9AEB'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRates.useful_l"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="28"
+                >
+                </circle-progress>
+    
+                <p>Korisna predavanja</p>
+           </div> 
+
+           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRates.interesting_l * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="5"
+                    [space]="-4"
+                    [innerStrokeWidth]="3"
+                    [outerStrokeColor]="'#4FC1E8'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRates.interesting_l"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="28"
+                >
+                </circle-progress>
+            
+                <p>Zanimljiva predavanja</p>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRates.material * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="5"
+                    [space]="-4"
+                    [innerStrokeWidth]="3"
+                    [outerStrokeColor]="'#A0D568'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRates.material"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="28"
+                >
+                </circle-progress>
+    
+                <p>Materijal za učenje</p>
+            </div> 
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRates.commitment * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="5"
+                    [space]="-4"
+                    [innerStrokeWidth]="3"
+                    [outerStrokeColor]="'#FFCE54'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRates.commitment"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="28"
+                >
+                </circle-progress>
+    
+                <p>Zalaganje za predmet</p>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+                <circle-progress
+                    [percent]="averageRates.communication * 10"
+                    [radius]="50"
+                    [maxPercent]="100"
+                    [outerStrokeWidth]="5"
+                    [space]="-4"
+                    [innerStrokeWidth]="3"
+                    [outerStrokeColor]="'#ED5564'"
+                    [innerStrokeColor]="'#07080a'"
+                    [animation]="true"
+                    [animationDuration]="500"
+                    [title]="averageRates.communication"
+                    [showUnits]="false"
+                    [showSubtitle]="false"
+                    [titleFontSize]="28"
+                >
+                </circle-progress>
+    
+                <p>Komunikacija</p>
+            </div>
+
+
+
+
+        </div>
+
+
+
+        
+    </div>
+
+    <div class="rates-section">
+        <div class="title ml-3">
+            <i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #eb9627;"></i> Ocene i komentari
+        </div>
+
+
+        <!--Leave comment-->
+
+        <form #form="ngForm" (submit)="onSubmit(form)">
+
+            <div class="review row mt-3 mb-3 ml-3 mr-3">
+    
+                <div class="col-xl-6 col-lg-6 col-md-6 rates border">
+            
+                    <ul class="rates-list m-0 p-0">
+                        <li><i>Korisna predavanja:</i>
+                            <span>
+                                <input type="number" name="useful_l" #useful_l="ngModel" [(ngModel)]="formModel.useful_l" (keyup)="limitRate($event)" (change)="limitRate($event)" class="rate-picker" min="1" max="10" id="useful_l" style="color: #AC9AEB;">
+                            </span>
+                        </li>
+                        <li><i>Zanimljiva predavanja:</i> 
+                            <span>
+                                <input type="number" name="interesting_l" #interesting_l="ngModel" [(ngModel)]="formModel.interesting_l" (keyup)="limitRate($event)" (change)="limitRate($event)" class="rate-picker" min="1" max="10" id="interesting_l" style="color: #4FC1E8">
+                            </span>
+                        </li>
+                        <li><i>Materijal za učenje:</i> 
+                            <span>
+                                <input type="number" name="material" #material="ngModel" [(ngModel)]="formModel.material" (keyup)="limitRate($event)" (change)="limitRate($event)"  class="rate-picker" min="1" max="10" id="material" style="color: #A0D568">
+                            </span>
+                        </li>
+                        <li><i>Zalaganje za predmet:</i> 
+                            <span>
+                                <input type="number" name="commitment" #commitment="ngModel" [(ngModel)]="formModel.commitment" (keyup)="limitRate($event)" (change)="limitRate($event)" class="rate-picker" min="1" max="10" id="commitment" style="color: #e4b02c">
+                            </span>
+                        </li>
+                        <li><i>Komunikacija:</i> 
+                            <span>
+                                <input type="number" name="communication" #communication="ngModel" [(ngModel)]="formModel.communication" (keyup)="limitRate($event)" (change)="limitRate($event)" class="rate-picker" min="1" max="10" id="communication" style="color: #ED5564">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            
+                <div class="col-xl-6 col-lg-6 col-md-6 comment border">
+                    
+                    <div class="date">
+                           <small class="form-text text-muted"><i>{{ formatDate() }}</i></small>
+                    </div>
+            
+                    <div class="commm">
+                        <textarea name="comment" #comment="ngModel"  [(ngModel)]="formModel.comment" maxlength="200" id="leave-comment" rows="3" placeholder="Napišite svoj komentar ovde..."></textarea>
+                    </div>
+
+                    <label class="text-danger message" style="width: 70%; font-size: 14px;"
+                     *ngIf="useful_l.touched && useful_l.value < 1 || useful_l.value > 10
+                     || interesting_l.touched && interesting_l.value < 1 || interesting_l.value > 10
+                     || material.touched && material.value < 1 || material.value > 10
+                     || commitment.touched && commitment.value < 1 || commitment.value > 10
+                     || communication.touched && communication.value < 1 || communication.value > 10">Vrednost ocene mora biti između 1 i 10</label>
+
+                    <div class="send text-right">
+                        <button 
+                            class="btn" 
+                            type="submit"
+                            [disabled]="useful_l.value < 1 || useful_l.value > 10
+                            || interesting_l.value < 1 || interesting_l.value > 10
+                            || material.value < 1 || material.value > 10
+                            || useful_l.value < 1 || useful_l.value > 10
+                            || commitment.value < 1 || commitment.value > 10
+                            || communication.value < 1 || communication.value > 10 
+                            || !comment.valid">
+                        Oceni</button>
+                    </div>
+                    
+                </div>
+            
+            </div>
+
+        </form>
+
+
+        <!--All comments-->
+
+        <div *ngFor="let review of lecturer.reviews; let i = index">
+
+           <app-comment
+               [user_id]="user.id"
+               [role]="user.role"
+               [review_id]="review.id"
+               [useful_l]="review.useful_l"
+               [interesting_l]="review.interesting_l"
+               [material]="review.material"
+               [commitment]="review.commitment"
+               [communication]="review.communication"
+               [date]="review.date"
+               [comment]="review.comment"
+               [likes]="review.likes"
+               [dislikes]="review.dislikes"
+               [deleteModal]="'deleteModal' + (i+1)"
+               (refresh)="refreshReviews();"
+           >
+           </app-comment>
+
+        </div>
+        
+       
+       
+        
+    </div>
+
+    
+</div>

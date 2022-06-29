@@ -1,0 +1,56 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+.review {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.rates li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 3px 0;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+li span {
+    float: right;
+}
+.comment .date {
+    margin-bottom: 5px;
+    width: 100%;
+}
+.delete {
+    color: black;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.comment .like {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.comment .like  i {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 5px;
+    transition: .3s;
+    cursor: pointer;
+}
+.comment .like  i:hover {
+    font-size: 25px;
+}   
+
+@media (max-width: 768px) {
+    .comment .comm {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .comment .comm {
+        min-height: 160px;
+    }
+}

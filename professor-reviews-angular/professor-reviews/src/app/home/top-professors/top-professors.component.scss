@@ -1,0 +1,115 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+.card {
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: rgb(219, 219, 226);
+    margin-top: 30px;
+    transition: .5s;
+    outline: none;
+    height: 530px;
+}
+
+.img1 img {
+    height: 200px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+}
+.img2 img {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    //z-index: 1;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+    margin-top: -80px;
+}
+.card:hover {
+    transform: scale(1.03);
+}
+.card:hover .img2 img {
+    border-color: $mainColor;
+    transition: .5s;
+}
+.main-text {
+    padding: 30px 0;
+    text-align: center;
+}
+.main-text h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 20px;
+    margin: 0 0 20px;
+    height: 50px;
+}
+.main-text p {
+    font-size: 14px;
+    padding: 0 35px;
+}
+.socials {
+    font-size: 16px;
+    color: $secondaryColor;
+}
+/*
+.rate {
+    color: darkcyan;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    padding: 0 35px;
+    margin-bottom: -10px;
+}
+*/
+
+.rate {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: right;
+    padding: 0 35px;
+    margin-bottom: -10px;
+}
+.rate span{
+    float: left;
+}
+.ratesCount {
+    font-size: 13px;
+    font-style: italic;
+    text-align: right;
+    padding: 0 35px;
+}
+
+.tooltipp {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltipp .tooltipptext {
+  font-size: 12px;
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipp:hover .tooltipptext {
+  visibility: visible;
+}
+
+
+
+
+
+

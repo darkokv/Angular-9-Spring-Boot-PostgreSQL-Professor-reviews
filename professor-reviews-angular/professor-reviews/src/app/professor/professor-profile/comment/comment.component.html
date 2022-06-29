@@ -1,0 +1,55 @@
+<div class="review row mt-3 mb-3 ml-3 mr-3">
+    
+    <div class="col-xl-6 col-lg-6 col-md-6 rates border">
+
+        <ul class="rates-list m-0 p-0">
+            <li><i>Korisna predavanja:</i><span style="color: #AC9AEB;">{{ useful_l }}</span></li>
+            <li><i>Zanimljiva predavanja:</i> <span style="color: #4FC1E8">{{ interesting_l }}</span></li>
+            <li><i>Materijal za učenje:</i> <span style="color: #A0D568">{{ material }}</span></li>
+            <li><i>Zalaganje za predmet:</i> <span style="color: #e4b02c">{{ commitment }}</span></li>
+            <li><i>Komunikacija:</i> <span style="color: #ED5564">{{ communication }}</span></li>
+        </ul>
+
+    </div>
+
+    <div class="col-xl-6 col-lg-6 col-md-6 comment border">
+        
+        <div class="date">
+            <small class="form-text text-muted">
+                <i>{{ date }}</i>
+                <i *ngIf="role == 'admin'" class="fa fa-trash delete" aria-hidden="true" data-toggle="modal" [attr.data-target]="'#' + deleteModal"></i>
+            </small>
+        </div>
+
+        <div class="comm">
+            {{ comment ? comment : '(Nema komentara)' }}
+        </div>
+
+        <div class="like text-right">
+            <span>{{ likes }}</span><i (click)="likeReview()" class="fa fa-thumbs-o-up"></i>
+            <span>{{ dislikes }}</span><i (click)="dislikeReview()" class="fa fa-thumbs-o-down"></i>
+        </div>
+        
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="{{deleteModal}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{deleteModal}}</h5>
+          <button type="button" #closebutton class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Da li ste sigurni da želite da obrišete recenziju?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="deleteReview(review_id)">Obriši</button>
+        </div>
+      </div>
+    </div>
+  </div>

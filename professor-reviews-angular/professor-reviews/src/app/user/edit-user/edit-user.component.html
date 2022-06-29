@@ -1,0 +1,34 @@
+<div style="width: 100%" class="d-flex justify-content-center">
+
+    <form id="form" [formGroup]="service.formModelUpdate" autocomplete="off" (submit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="oldPassword">Stara lozinka</label>
+        <input type="password" class="form-control" formControlName="oldPassword" id="oldPassword" placeholder="&#xf023; Stara lozinka" style="font-family:Poppins, sans-serif, FontAwesome">
+        <label class="text-danger message" *ngIf="service.formModelUpdate.get('oldPassword').touched && service.formModelUpdate.get('oldPassword').errors?.required">Ovo polje je obavezno</label>
+      </div>
+
+      <div formGroupName="passwords">
+
+        <div class="form-group">
+          <label for="newPassword">Nova lozinka</label>
+          <input type="password" class="form-control" formControlName="newPassword" id="newPassword" placeholder="&#xf023; Nova lozinka" style="font-family:Poppins, sans-serif, FontAwesome">
+          <label class="text-danger message" *ngIf="service.formModelUpdate.get('passwords.newPassword').touched && service.formModelUpdate.get('passwords.newPassword').errors?.required">Ovo polje je obavezno</label>
+          <label class="text-danger message" *ngIf="service.formModelUpdate.get('passwords.newPassword').touched && service.formModelUpdate.get('passwords.newPassword').errors?.minlength">Sifra mora sadržati najmanje 8 karaktera</label>
+        </div>
+  
+        <div class="form-group">
+          <label for="confirmNewPassword">Ponovi novu lozinku</label>
+          <input type="password" class="form-control" formControlName="confirmNewPassword" id="confirmNewPassword" placeholder="&#xf023; Ponovi novu lozinku" style="font-family:Poppins, sans-serif, FontAwesome">
+          <label class="text-danger message" *ngIf="service.formModelUpdate.get('passwords.confirmNewPassword').touched && service.formModelUpdate.get('passwords.confirmNewPassword').errors?.required">Ovo polje je obavezno</label>
+          <label class="text-danger message" *ngIf="service.formModelUpdate.get('passwords.confirmNewPassword').errors?.passwordMismatch">Potvrda lozinke se ne poklapa</label>
+        </div>
+
+      </div>
+
+
+      <button type="submit" [disabled]="!service.formModelUpdate.valid" class="btn btn-primary">Promeni</button>
+
+    </form>
+
+</div>

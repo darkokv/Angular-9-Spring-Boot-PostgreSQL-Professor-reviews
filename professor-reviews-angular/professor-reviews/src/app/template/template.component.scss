@@ -1,0 +1,22 @@
+.body {
+    background-color: rgb(219, 219, 226);
+    min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.section {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.main {
+    flex: 1;
+}
+
+.absolute-center {
+    width: 100%;
+    margin-top: 90px;
+
+}

@@ -1,0 +1,81 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+.img1 {
+    background-image: url('../../assets/img/cartImg1.png');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    transition: .5s;
+}
+.img2 {
+    background-image: url('../../assets/img/cartImg2.png');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    transition: .5s;
+}
+.img3 {
+    background-image: url('../../assets/img/cartImg3.png');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    transition: .5s;
+}
+.img1, .img2, .img3 {
+    background-color: rgb(104, 100, 100);
+    height: 170px;
+}
+.card {
+    transition: .2s;
+    border-radius: 15px;
+}
+.card:hover {
+    transform: scale(1.03);
+    .img1, .img2, .img3 {
+        filter: blur(0px);
+        -webkit-filter: blur(2px);
+    }
+}
+.fa-graduation-cap, .fa-university, .fa-bar-chart {
+    color: $mainColor;
+    font-size: 48px;
+    position: relative;
+    top: -100px;
+}
+.btn {
+    color: white;
+    background-color: $secondaryColor;
+}
+.btn:hover {
+    color: $mainColor;
+}
+.firstCard {
+    margin-right: 10px;
+}
+.thirdCard {
+    margin-left: 10px;
+}
+.card-body {
+    height: 130px;
+}
+
+
+@media (max-width: 767px) {
+    .firstCard {
+        margin-right: 0;
+    }
+    .thirdCard {
+        margin-left: 0;
+    }
+    .card-body {
+        height: 180px;
+    }
+    .cardCol:nth-child(2),
+    .cardCol:nth-child(3) {
+        margin-top: 15px;
+    }
+    #carouselExampleIndicators {
+        display: none;
+    }
+}

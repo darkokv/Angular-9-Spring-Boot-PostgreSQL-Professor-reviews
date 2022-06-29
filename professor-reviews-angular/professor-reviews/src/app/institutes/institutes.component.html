@@ -1,0 +1,118 @@
+<div class="row">
+
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <div class="list-group mb-3" id="list-tab" role="tablist">
+
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action active align-items-center" data-toggle="list" href="#list-beograd">
+              Beograd <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-bor">
+              Bor <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-bujanovac">
+            Bujanovac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-valjevo">
+            Valjevo <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-vranje">
+            Vranje <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-vrsac">
+            Vršac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-zajecar">
+            Zaječar <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-zvecan">
+            Zvečan <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-zrenjanin">
+            Zrenjanin <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-zubinpotok">
+            Zubin Potok <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-jagodina">
+            Jagodina <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-kosovskamitrovica">
+            Kosovska Mitrovica <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-kragujevac">
+            Kragujevac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('Kraljevo')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-kraljevo">
+            Kraljevo <span class="badge badge-primary badge-pill">{{getCountByCity('Kraljevo')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-krusevac">
+            Kruševac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-leposavic">
+            Leposavić <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-leskovac">
+            Leskovac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-nis">
+            Niš <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-novipazar">
+            Novi Pazar <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-novisad">
+            Novi Sad <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-pozarevac">
+            Požarevac <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-pristina">
+            Priština <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-sombor">
+            Sombor <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-sremskakamenica">
+            Sremska Kamenica <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-subotica">
+            Subotica <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-cacak">
+            Užice <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('Čačak')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-cacak">
+            Čačak <span class="badge badge-primary badge-pill">{{getCountByCity('Čačak')}}</span>
+          </a>
+          <a (click)="getInstitutesByCityName('null')" class="list-group-item list-group-item-action align-items-center" data-toggle="list" href="#list-surdulica">
+            Surdulica <span class="badge badge-primary badge-pill">{{getCountByCity('null')}}</span>
+          </a>
+            
+        </div>
+      </div>
+
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6">
+      
+      <div *ngIf="institutes" class="row">
+    
+        <div *ngFor="let institute of institutes" class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+            <app-institute-card
+                [id]="institute.id"
+                [coverPicture]="institute.img_cover_src"
+                [name]="institute.name"
+                [adress]="institute.adress"
+                [city]="institute.city"
+                [averageRate]="institute.id"
+            ></app-institute-card>
+        </div>
+    
+        </div>
+
+
+    </div>
+
+
+
+  </div>

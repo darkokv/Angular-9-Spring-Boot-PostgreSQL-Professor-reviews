@@ -1,0 +1,79 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+.body {
+    width: 100%;
+    height: 85vh;
+}
+.login {
+    width: 70%;
+    height: 90%;
+    margin: 0;
+    background-color: white;
+
+}
+.img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-color: $secondaryColor;
+}
+.img img {
+    width: 100%;
+    height: 100%;
+    -ms-transform: rotate(-55deg);
+    transform: rotate(-55deg)
+}
+
+.form {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+}
+.form h3 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+form input {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+form button {
+    color: $mainColor;
+    background-color: $secondaryColor;
+}
+
+form p {
+    margin-top: 20px;
+}
+form p a {
+    color: $secondaryColor;
+    text-decoration: none;
+}
+form p a:hover {
+    color: $mainColor;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+@media (max-width: 768px) {
+    .img {
+        display: none;
+    }
+    .body {
+        background-color: white;
+        height: auto;
+    }
+    .login {
+        width: 90%;
+        height: auto;
+    }
+}

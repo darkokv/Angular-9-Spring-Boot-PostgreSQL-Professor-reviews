@@ -1,0 +1,56 @@
+<!--light and dark theme-->
+<div class="navbody hero-anime dark">   
+
+  <div class="navigation-wrap bg-light start-header start-style">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="navbar navbar-expand-md navbar-light">
+                  
+                      <div>
+                        <a routerLink="/"><img src="../../../assets/img/transparent logo.png" width="220px" height="auto" alt=""></a>
+                      </div>  
+                      
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav ml-auto py-4 py-md-0">
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" (click)="closeNav()" routerLink="/institucije" routerLinkActive="activePage">institucije</a>
+                              </li>
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a class="nav-link" (click)="closeNav()" routerLink="/profesori" routerLinkActive="activePage">Profesori</a>
+                              </li>
+
+                              <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#" routerLinkActive="activePage">Statistika</a>
+                              </li>
+
+                              <li *ngIf="(loginStatus$ | async) as loginStatus" class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a *ngIf="(fullname$ | async) as fullname" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ fullname }}</a>
+                                  <div class="dropdown-menu">
+                                  <a class="dropdown-item" (click)="closeNav()" routerLink="/profil" routerLinkActive="activePageOption">Promeni lozinku</a>
+                                  <a class="dropdown-item" (click)="closeNav(); onLogout();" id="logout" href="#">Odjavi se</a>
+                                  </div>
+                              </li>
+                            
+
+                              <li *ngIf="!(loginStatus$ | async) as loginStatus" id="login" class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                  <a class="nav-link" (click)="closeNav();"routerLink="/prijava">Prijavi se</a>
+                              </li>
+
+                          </ul>
+                      </div>
+                      
+                  </nav>      
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+</div>

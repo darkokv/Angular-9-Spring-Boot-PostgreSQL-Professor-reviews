@@ -1,0 +1,135 @@
+$mainColor:	#eb9627;
+$secondaryColor: #07080a;
+
+.top {
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 20px 0 0 0;
+}
+.top img {
+    border-radius: 5px;
+}
+.data {
+    //margin: 0 20px;
+}
+.data h4{
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+.data a {
+    color: #c27a1c;  
+}
+.rates-section {
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgb(235, 235, 235);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    height: auto;
+    padding: 20px;
+    margin: 20px 0 0 0;
+}
+.rates-section .title {
+    font-size: 20px;
+}
+.rates-section .col {
+    text-align: center;
+}
+
+.review {
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    overflow: hidden;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.rates li {
+    text-decoration: none;
+    list-style-type: none;
+    padding: 3px 0;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+li span {
+    float: right;
+}
+.comment .date {
+    margin-bottom: 5px;
+}
+.comment .send {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.comment .send  i {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 5px;
+    transition: .3s;
+}
+.comment .send  i:hover {
+    font-size: 25px;
+}
+.comment .send button {
+    color: #269d98;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid rgb(175, 175, 175);
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.chart {
+    width: 100%;
+}
+.rate-picker {
+    width: 40px;
+    height: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(175, 175, 175);
+    background-color: transparent;
+}
+#leave-comment {
+    width: 100%;
+    outline: none;
+    border: 1px solid  rgb(175, 175, 175);
+    background-color: transparent;
+}
+
+@media (max-width: 1200px) {
+    .ngxx {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 990px) {
+    .ngxx {
+        margin-top: 0;
+    }
+    .profilePhoto {
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .profilePhoto {
+        text-align: left;
+    }
+    .comment .commm {
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .comment .commm {
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 420px) {
+    .data {
+        font-size: 14px;
+    }
+}

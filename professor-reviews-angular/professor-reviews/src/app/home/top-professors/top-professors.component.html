@@ -1,0 +1,35 @@
+<div *ngIf="topProfessors" class="row">
+
+    <div *ngFor="let professor of sortBy('averageRate').slice(0,10); let i = index" class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+      
+      <!--Institute card-->
+
+        <div class="card" [routerLink]="['/profesor', professor.id]">
+            <div class="img1"><img src="{{professor.institute.img_cover_src}}" alt=""></div>
+            <div class="img2"><img src="{{professor.img_src}}" alt=""></div>
+            <div class="main-text">
+                <h2>{{professor.fullname}}</h2>
+                <p class="text-left">
+                    <strong>Institut:</strong> {{professor.institute.name}} <br>
+                    <strong>Grad:</strong> {{professor.institute.city}} <br>
+                        <a href="mailto:{{professor.email}}"><i class="tooltipp socials fa fa-envelope"><div class="tooltipptext">{{professor.email}}</div></i></a>
+                </p>
+                <div class="rate">
+                    <span [style.color]="i == 0 ? '#e6c200' : (i == 1 ? '#8a8a8a' : (i == 2 ? '#cd7f32' : 'black'))">#{{i+1}}</span>
+                    <i class="fa fa-star-o"></i> {{professor.averageRate}} <br>
+                    <!--<ng-animated-counter *ngIf="averageRate" [params]="params"></ng-animated-counter>-->
+        
+                </div>
+                <div class="ratesCount">{{ rateCountPrint(professor.ratesCount) ? professor.ratesCount + ' recenzija' : professor.ratesCount + ' recenzije' }}</div>
+            </div>
+            
+            
+        </div>
+
+    
+
+      </div>
+      
+  </div>
+    
+  

@@ -1,0 +1,31 @@
+<div class="body d-flex justify-content-center align-items-center">
+
+    <div class="login row">
+
+        <div class="col-xl-6 col-lg-6 col-md-6 img">
+            <img src="../../../assets/img/logo_transparent.png" alt="">
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 form d-flex justify-content-center align-self-center">
+            
+            <form #form="ngForm" (submit)="onSubmit(form)">
+                <h3>Prijavi se</h3>
+                <div class="form-group pt-2">
+                  <!--label for="exampleInputEmail1">Username</label-->
+                  <input type="username" id="username" name="username"  [(ngModel)]="formModel.username" placeholder="&#xf007; Korisničko ime" style="font-family:Poppins, sans-serif, FontAwesome">
+                </div>
+                <div class="form-group pt-2">
+                  <!--label for="exampleInputPassword1">Password</label-->
+                  <input type="password" id="password" name="password" [(ngModel)]="formModel.password" placeholder="&#xf023; Lozinka" style="font-family:Poppins, sans-serif, FontAwesome">
+                </div>
+                <button type="submit" [disabled]="formModel.username == '' || formModel.password == '' " class="btn">Prijavi se</button>
+                <p><a routerLink="/registracija">Nemaš nalog? Registruj se!</a></p>
+              </form>
+
+
+
+        </div>
+
+    </div>
+
+</div>

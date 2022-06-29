@@ -1,0 +1,26 @@
+<div *ngIf="id">
+    <div class="card" [routerLink]="['/profesor', id]">
+        <div class="img1"><img src="{{coverPicture}}" alt=""></div>
+        <div class="img2"><img src="{{profilePicture}}" alt=""></div>
+        <div class="main-text">
+            <h2>{{fullname}}</h2>
+            <p class="text-left">
+                <strong>Institut:</strong> {{institute}} <br>
+                <strong>Grad:</strong> {{city}} <br>
+                    <a href="mailto:{{email}}"><i class="tooltipp socials fa fa-envelope"><div class="tooltipptext">{{email}}</div></i></a>
+            </p>
+            <div class="rate">
+                <i class="fa fa-star-o"></i> {{averageRate}} <br>
+                <!--<ng-animated-counter *ngIf="averageRate" [params]="params"></ng-animated-counter>-->
+    
+            </div>
+            <div class="ratesCount">{{ rateCountPrint(ratesCount) ? ratesCount + ' recenzija' : ratesCount + ' recenzije' }}</div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+<!--[style.color]="averageRate > 8 ? '#fff' : (averageRate < 7 ? 'blue' : 'green')"-->

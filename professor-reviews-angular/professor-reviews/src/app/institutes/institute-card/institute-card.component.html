@@ -1,0 +1,22 @@
+<div *ngIf="id && averageRate">
+    <div class="card" >
+        <div class="img1"><img src="{{coverPicture}}" alt=""></div>
+        <!--div class="img2"><img src="{{profilePicture}}" alt=""></div-->
+        <div class="main-text">
+            <h2>{{name}}</h2>
+            <p class="text-left">
+                <strong>Adresa:</strong> {{adress}} <br>
+                <strong>Grad:</strong> {{city}} <br>
+            </p>
+            
+            <div class="rate">
+                <i class="fa fa-star-o"></i>{{ avgPrint }}<br>
+                <!--<ng-animated-counter *ngIf="averageRate" [params]="params"></ng-animated-counter>-->
+    
+            </div>
+            <div class="ratesCount">{{ rateCountPrint(numberOfReviews) ? numberOfReviews + ' recenzija' : numberOfReviews + ' recenzije' }}</div>
+        </div>
+        
+        
+    </div>
+</div>

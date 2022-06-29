@@ -1,0 +1,48 @@
+<div class="searchbox text-center">
+
+    <h3 class="mb-4">Pronađi profesora</h3>
+
+    <form #form="ngForm" (submit)="onSubmit(form.value.search)">
+        <div class="form-group">
+            <input type="search" [(ngModel)]="keyword" name="search" id="search"  placeholder="Unesi ime i prezime profesora">
+            <button [disabled]="!keyword" type="submit" class="btn" id="button">Pretraži</button>
+          </div>
+    </form>
+</div>
+
+<div *ngIf="searchLecturers" class="professorlist row">
+    
+    <div *ngFor="let lecturer of searchLecturers | slice: (page-1) * pageSize : page * pageSize" class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+        <app-professor-card
+            [id]="lecturer.id"
+            [coverPicture]="lecturer.institute.img_cover_src"
+            [profilePicture]="lecturer.img_src"
+            [fullname]="lecturer.fullname"
+            [institute]="lecturer.institute.name"
+            [city]="lecturer.institute.city"
+            [averageRate]="lecturer.averageRate"
+            [email]="lecturer.email"
+            [ratesCount]="lecturer.ratesCount"
+        ></app-professor-card>
+    </div>
+
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <ngb-pagination 
+        [hidden]="searchLecturers.length < 13"
+        [(page)]="page"
+        [pageSize]="pageSize"
+        [collectionSize]="searchLecturers.length"
+        (pageChange)="goToTop();"
+        >
+    </ngb-pagination>
+</div>
+
+<div class="text-center" *ngIf="!fetched && submitted">
+    <div  class="lds-dual-ring"></div>
+  </div>
+
+<!--<h2 *ngIf="searchLecturers.length == 0 && submitted && fetched" class="text-center">Nema profesora</h2>-->
+
+
